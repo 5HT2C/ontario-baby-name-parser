@@ -12,7 +12,7 @@ Who? Well, this data includes any name that is registered more than 5 times in o
 ## Usage
 
 ```bash
-git clone git@github.com:l1ving/ontario-baby-name-parser.git
+git clone git@github.com:5HT2/ontario-baby-name-parser.git
 cd ontario-baby-name-parser
 make
 ./obnp -h
