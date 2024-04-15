@@ -16,6 +16,8 @@ var (
 	name = flag.String("name", "", "Name to find")
 	last = flag.Int64("last", 0, "Limit to last X years")
 	csvF = flag.Bool("csv", false, "Use CSV output")
+	filF = flag.Bool("f", false, "Filter to results with sex 'F'")
+	filM = flag.Bool("m", false, "Filter to results with sex 'M'")
 )
 
 func main() {
@@ -38,8 +40,14 @@ func main() {
 	if *csvF != true {
 		fmt.Printf("Parsing name: %s\n\n", upperName)
 	}
-	read(female, upperName, "F")
-	read(male, upperName, "M")
+
+	if *filF == true || (*filF == false && *filM == false) {
+		read(female, upperName, "F")
+	}
+
+	if *filM == true || (*filF == false && *filM == false) {
+		read(male, upperName, "M")
+	}
 }
 
 func read(file *os.File, name string, sex string) {
