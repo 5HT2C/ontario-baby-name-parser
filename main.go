@@ -33,7 +33,8 @@ func main() {
 	}
 
 	if len(*name) == 0 {
-		log.Fatalf("-name arg not set!\n")
+		flag.Usage()
+		return
 	}
 
 	upperName := strings.ToUpper(*name)
