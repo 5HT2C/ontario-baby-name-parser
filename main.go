@@ -15,6 +15,7 @@ import (
 var (
 	name = flag.String("name", "", "Name to find")
 	last = flag.Int64("last", 0, "Limit to last X years")
+	csvF = flag.Bool("csv", false, "Use CSV output")
 )
 
 func main() {
@@ -34,7 +35,9 @@ func main() {
 	}
 
 	upperName := strings.ToUpper(*name)
-	fmt.Printf("Parsing name: %s\n\n", upperName)
+	if *csvF != true {
+		fmt.Printf("Parsing name: %s\n\n", upperName)
+	}
 	read(female, upperName, "F")
 	read(male, upperName, "M")
 }
@@ -60,7 +63,11 @@ func read(file *os.File, name string, sex string) {
 			continue
 		}
 		if record[1] == name {
-			fmt.Printf("[%s] Year %s (%s)\n", sex, record[0], record[2])
+			if *csvF != true {
+				fmt.Printf("[%s] Year %s (%s)\n", sex, record[0], record[2])
+			} else {
+				fmt.Printf("%s,%s,%s\n", sex, record[0], record[2])
+			}
 		}
 	}
 }
