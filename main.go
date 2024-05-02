@@ -23,11 +23,11 @@ var (
 func main() {
 	flag.Parse()
 
-	female, err := os.Open("data/ontario_top_baby_names_female_1917-2019_en_fr.csv")
+	female, err := os.Open("data/ontario_top_baby_names_female_1917-2022_en_fr.csv")
 	if err != nil {
 		panic(err)
 	}
-	male, err := os.Open("data/ontario_top_baby_names_male_1917-2019_en_fr.csv")
+	male, err := os.Open("data/ontario_top_baby_names_male_1917-2022_en_fr.csv")
 	if err != nil {
 		panic(err)
 	}
