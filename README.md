@@ -1,6 +1,8 @@
 # obnp
 ![image](https://user-images.githubusercontent.com/17222512/139335729-84682bba-347b-498b-94cb-d040292f393d.png)
 
+### [🔗 Preview / Filter Data](https://flatgithub.com/5HT2C/ontario-baby-name-parser)
+
 What? A parser for Ontario's baby name data
 
 Why? I wanted to see if a specific name existed in both the male and female datasets. This tool is more useful than just that.
