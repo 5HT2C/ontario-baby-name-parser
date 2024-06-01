@@ -27,11 +27,11 @@ func main() {
 
 	//
 	// Validate data and args
-	female, err := os.Open("data/ontario_top_baby_names_female_1917-2022_en_fr.csv")
+	female, err := os.Open("data/ontario_top_baby_names_female_1917-2022_en_fr_clean.csv")
 	if err != nil {
 		panic(err)
 	}
-	male, err := os.Open("data/ontario_top_baby_names_male_1917-2022_en_fr.csv")
+	male, err := os.Open("data/ontario_top_baby_names_male_1917-2022_en_fr_clean.csv")
 	if err != nil {
 		panic(err)
 	}
